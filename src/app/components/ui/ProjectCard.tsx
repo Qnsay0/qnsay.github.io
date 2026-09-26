@@ -18,7 +18,7 @@ export default function ProjectCard(props: ProjectCardProps) {
       <div className="flex flex-row gap-5 sm:gap-10 items-center">
         <span className="md:text-3xl text-xl">&#8598;</span>
         <span className="text-xl font-medium">{formattedIndex}</span>
-        <h1 className="uppercase tracking-wider font-semibold text-sm">
+        <h1 className="uppercase tracking-wider font-semibold text-2xl">
           {props.title}
         </h1>
       </div>

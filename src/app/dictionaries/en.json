@@ -9,8 +9,15 @@
     "bottomText": "Something gonna be here!!"
   },
   "introduction": {
+    "index": "01",
     "title": "About Me",
-    "text": "Will be soon!"
+    "text": "Second-year technical CS student at Wrocław Tech. For two years I've been building web in Next.js and mobile in Swift. Active in faculty government. Outside of code — sport.",
+    "specs": [
+      { "label": "Role", "value": "Frontend · iOS" },
+      { "label": "Stack", "value": "Next.js · Swift" },
+      { "label": "Base", "value": "Wrocław" },
+      { "label": "Off-code", "value": "Government · Sport" }
+    ]
   },
   "designPhilosophy": {
     "quote": "Design is not just what it looks like and feels like. Design is how it works.",
@@ -22,35 +29,19 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Masz pytania? Chcesz sie dowiedziec wiecej na moj temat i mojej dzialalnosci? Pisz smialo."
+    "subtitle": "Have a question? Want to know more about me and what I do? Just write.",
+    "buttonString": "Send now",
+    "email": "barteklim06@gmail.com",
+    "phoneNumber": "+48 571 242 470",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "messageLabel": "What would you like to ask?",
+    "messagePlaceholder": "Briefly describe what you need"
   },
   "footer": {
     "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
   },
-  "projectCards": [
-    {
-      "id": "planer-solvro",
-      "href": "https://github.com/twoj-profil/planer-solvro",
-      "title": "Planer Solvro",
-      "technologies": ["React", "TypeScript", "Tailwind CSS"]
-    },
-    {
-      "id": "jadlo-dla-studenta",
-      "href": "https://github.com/twoj-profil/jadlo-dla-studenta",
-      "title": "Jadło Dla Studenta",
-      "technologies": ["React Native", "Expo", "Tailwind CSS"]
-    },
-    {
-      "id": "portfolio",
-      "href": "https://github.com/twoj-profil/portfolio",
-      "title": "Developer Portfolio",
-      "technologies": ["Next.js", "GSAP", "Lenis", "Tailwind CSS"]
-    },
-    {
-      "id": "portfolioApI",
-      "href": "https://github.com/twoj-profil/portfolio",
-      "title": "API",
-      "technologies": ["Next.js", "GSAP"]
-    }
-  ]
+  "projectCards": []
 }

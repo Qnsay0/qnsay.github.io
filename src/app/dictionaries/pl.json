@@ -14,44 +14,36 @@
     "author": "Steve Jobs"
   },
   "introduction": {
-    "title": "About Me",
-    "text": "[Passionate developer and second-year student driven by a constant desire to learn and tackle new challenges. While programming is my main focus, my active role in the student council and love for team sports shape how I work. I thrive in collaborative environments, combining technical problem-solving with a strong team-oriented mindset.]"
+    "index": "01",
+    "title": "O mnie",
+    "text": "Student 2. roku informatyki technicznej na PWr. Od dwóch lat buduję web w Next.js i mobile w Swift. Działam w samorządzie wydziałowym. Poza kodem — sport.",
+    "specs": [
+      { "label": "Rola", "value": "Frontend · iOS" },
+      { "label": "Stack", "value": "Next.js · Swift" },
+      { "label": "Baza", "value": "Wrocław" },
+      { "label": "Poza kodem", "value": "Samorząd · Sport" }
+    ]
   },
   "projects": {
-    "title": "Projects",
-    "subtitle": "Will be soon!"
+    "index": "02",
+    "title": "Projekty",
+    "subtitle": "[Projektyw których miałem przyjemność tworzyć i brać czynny udział]"
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Masz pytania? Chcesz sie dowiedziec wiecej na moj temat i mojej dzialalnosci? Pisz smialo."
+    "title": "Kontakt",
+    "subtitle": "Masz pytania? Chcesz sie dowiedziec wiecej na moj temat i mojej dzialalnosci? Pisz smialo.",
+    "buttonString": "Wyślij wiadomość",
+    "email": "barteklim06@gmail.com",
+    "phoneNumber": "+48 571 242 470",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "emailLabel": "Email",
+    "emailPlaceholder": "twoj@email.com",
+    "messageLabel": "O co chcesz się zapytać?",
+    "messagePlaceholder": "Napisz krótko, czego potrzebujesz"
   },
   "footer": {
     "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
   },
-  "projectCards": [
-    {
-      "id": "planer-solvro",
-      "href": "https://github.com/twoj-profil/planer-solvro",
-      "title": "Planer Solvro",
-      "technologies": ["React", "TypeScript", "Tailwind CSS"]
-    },
-    {
-      "id": "jadlo-dla-studenta",
-      "href": "https://github.com/twoj-profil/jadlo-dla-studenta",
-      "title": "Jadło Dla Studenta",
-      "technologies": ["React Native", "Expo", "Tailwind CSS"]
-    },
-    {
-      "id": "portfolio",
-      "href": "https://github.com/twoj-profil/portfolio",
-      "title": "Developer Portfolio",
-      "technologies": ["Next.js", "GSAP", "Lenis", "Tailwind CSS"]
-    },
-    {
-      "id": "portfolioApI",
-      "href": "https://github.com/twoj-profil/portfolio",
-      "title": "API Portfolio",
-      "technologies": ["Next.js", "GSAP"]
-    }
-  ]
+  "projectCards": []
 }

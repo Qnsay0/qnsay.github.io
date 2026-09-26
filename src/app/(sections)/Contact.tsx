@@ -2,13 +2,89 @@
 import { FaGithubAlt, FaLinkedin, FaInstagram } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { MdSend } from "react-icons/md";
+import type { IconType } from "react-icons";
 
-interface ProjectProps {
+interface ContactProps {
   title: string;
   subtitle: string;
+  buttonString: string;
+  email: string;
+  phoneNumber: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  messageLabel: string;
+  messagePlaceholder: string;
 }
 
-export default function Contact(props: ProjectProps) {
+const SOCIALS: { href?: string; icon: IconType; label: string }[] = [
+  {
+    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
+    icon: FaGithubAlt,
+    label: "GitHub",
+  },
+  {
+    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
+    icon: FaLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
+    icon: FaInstagram,
+    label: "Instagram",
+  },
+];
+
+const labelClass =
+  "text-sm font-semibold uppercase tracking-wider text-neutral-400";
+const inputClass =
+  "h-8 resize-none border-b border-neutral-600 bg-transparent outline-none transition-colors focus:border-white";
+const contactLineClass = "border-b text-lg leading-loose md:text-xl";
+
+function Field({
+  id,
+  name,
+  label,
+  placeholder,
+  rows = 1,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  rows?: number;
+}) {
+  return (
+    <div className="flex flex-col gap-2">
+      <label htmlFor={id} className={labelClass}>
+        {label}
+      </label>
+      <textarea
+        id={id}
+        name={name}
+        rows={rows}
+        placeholder={placeholder}
+        className={`${inputClass} ${rows > 1 ? "h-auto pb-1.5" : ""}`}
+      />
+    </div>
+  );
+}
+
+export default function Contact({
+  title,
+  subtitle,
+  buttonString,
+  email,
+  phoneNumber,
+  nameLabel,
+  namePlaceholder,
+  emailLabel,
+  emailPlaceholder,
+  messageLabel,
+  messagePlaceholder,
+}: ContactProps) {
   const form = useRef<HTMLFormElement>(null);
   const serviceKey = process.env.NEXT_PUBLIC_EMAIL_SERVICE_KEY as string;
   const templateKey = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_KEY as string;
@@ -28,110 +104,75 @@ export default function Contact(props: ProjectProps) {
   };
 
   return (
-    <div className="min-h-[70dvh] md:max-w-[1500] m-auto gap-10 bg-blackrounded-t-4xl text-white flex flex-row justify-between px-4 py-7 flex-wrap ">
-      <div className="px-5 flex flex-1 flex-col gap-10">
-        <div className="">
-          <h1 className="text-white uppercase font-bold text-7xl sm:text-7xl md:text-8xl lg:text-9xl leading-[1.05] tracking-tighter">
-            {props.title}
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-lg md:max-w-xl text-neutral-300">
-            {props.subtitle}
-          </p>
-          <div className="flex flex-col gap-3 items-start select-text">
-            <a className="border-b leading-loose text-lg md:text-xl font-normal ">
-              kontakt@barteklimdev.pl
-            </a>
-            <a className="border-b leading-loose text-lg md:text-xl">
-              +48 571 242 470
-            </a>
+    <section className="mx-auto flex h-fit flex-wrap justify-between gap-10 px-8 py-20  text-white max-w-7xl ">
+      <div className="flex flex-1 flex-col space-y-8">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <h1 className="text-7xl leading-[1.05] font-bold tracking-tighter text-white uppercase md:text-8xl">
+              {title}
+            </h1>
+            <p className="max-w-lg text-lg text-muted-foreground sm:text-xl md:max-w-xl md:text-2xl">
+              {subtitle}
+            </p>
+          </div>
+
+          <div className="flex flex-col space-y-2 w-fit select-text">
+            <span className={`${contactLineClass} text-white`}>{email}</span>
+            <span className={contactLineClass}>{phoneNumber}</span>
           </div>
         </div>
 
-        <div className="flex flex-row gap-5 text-2xl ">
-          <a
-            href={process.env.NEXT_PUBLIC_GITHUB_LINK}
-            target="_blank"
-            className="text-neutral-400 hover:text-white transition-colors"
-          >
-            <FaGithubAlt />
-          </a>
-          <a
-            href={process.env.NEXT_PUBLIC_GITHUB_LINK}
-            target="_blank"
-            className="text-neutral-400 hover:text-white transition-colors"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href={process.env.NEXT_PUBLIC_GITHUB_LINK}
-            target="_blank"
-            className="text-neutral-400 hover:text-white transition-colors"
-          >
-            <FaInstagram />
-          </a>
+        <div className="flex gap-5 text-2xl">
+          {SOCIALS.map(({ href, icon: Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-neutral-400 transition-colors hover:text-white"
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
       </div>
-      <div className="flex flex-1 flex-col p-10 gap-10">
-        <form ref={form} className="flex flex-col gap-5" onSubmit={sendEmail}>
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="name"
-              className="text-sm font-semibold uppercase tracking-wider text-neutral-400 resize-none"
-            >
-              Name
-            </label>
-            <textarea
-              name="name"
-              id="name"
-              rows={1}
-              className="outline-0 border-b border-b-neutral-600 focus:border-b-white resize-none"
-              placeholder="Twoje imie"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-semibold uppercase tracking-wider text-neutral-400"
-            >
-              email
-            </label>
-            <textarea
-              name="email"
-              id="email"
-              rows={1}
-              className="outline-0 border-b border-b-neutral-600 pb-1.5 focus:border-b-white resize-none"
-              placeholder="twoj@email.com"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="question"
-              className="text-sm font-semibold uppercase tracking-wider text-neutral-400"
-            >
-              O co chcesz się zapytać?
-            </label>
-            <textarea
-              name="message"
-              id="question"
-              rows={3}
-              placeholder="Napisz krótko, czego potrzebujesz"
-              className="outline-none border-b border-b-neutral-600 bg-transparent pb-1.5 focus:border-b-white transition-colors resize-none"
-            />
-          </div>
 
-          <p className="text-sm text-neutral-400 max-w-lg mt-5">
-            Administratorem danych jest Bartłomiej Klimek. Dane z formularza
-            przetwarzane są wyłącznie w celu obsługi zapytania i kontaktu
-            zwrotnego.
-          </p>
-          <button
-            type="submit"
-            className="relative cursor-pointer z-99 bg-white text-black px-7.5 py-2.5 uppercase tracking-wider font-bold rounded-4xl w-fit m-auto mt-5"
-          >
-            Send a message
-          </button>
-        </form>
-      </div>
-    </div>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-1 flex-col gap-5 mt-5"
+      >
+        <Field
+          id="name"
+          name="name"
+          label={nameLabel}
+          placeholder={namePlaceholder}
+        />
+        <Field
+          id="email"
+          name="email"
+          label={emailLabel}
+          placeholder={emailPlaceholder}
+        />
+        <Field
+          id="question"
+          name="message"
+          label={messageLabel}
+          placeholder={messagePlaceholder}
+          rows={3}
+        />
+
+        <button
+          type="submit"
+          className="group relative z-[99] mx-auto mt-5 flex w-fit cursor-pointer items-center justify-between gap-4 rounded-4xl bg-white px-7.5 py-2.5 font-bold tracking-wider text-black uppercase transition duration-200 hover:-translate-y-0.5"
+        >
+          <MdSend className="transition duration-200 group-hover:-translate-y-0.5" />
+          <span className="transition duration-200 group-hover:-translate-y-0.5">
+            {buttonString}
+          </span>
+        </button>
+      </form>
+    </section>
   );
 }

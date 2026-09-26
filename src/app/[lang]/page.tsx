@@ -32,16 +32,14 @@ export default async function Main({
         quote={dict.designPhilosophy.quote}
         author={dict.designPhilosophy.author}
       />
-      <Introduction
-        title={dict.introduction.title}
-        text={dict.introduction.text}
-      />
+      <Introduction {...dict.introduction} />
       <Projects
         title={dict.projects.title}
         subtitle={dict.projects.subtitle}
         projects={allProjects}
+        index={dict.projects.index}
       />
-      <Contact title={dict.contact.title} subtitle={dict.contact.subtitle} />
+      <Contact {...dict.contact} />
       <Footer />
     </main>
   );
