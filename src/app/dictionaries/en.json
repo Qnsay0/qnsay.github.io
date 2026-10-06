@@ -24,8 +24,9 @@
     "author": "Steve Jobs"
   },
   "projects": {
+    "index": "02",
     "title": "Projects",
-    "subtitle": "Will be soon!"
+    "subtitle": "Things I've built — and the ones still in progress."
   },
   "contact": {
     "title": "Contact",
@@ -43,5 +44,24 @@
   "footer": {
     "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
   },
-  "projectCards": []
+  "projectCards": [
+    {
+      "href": "/",
+      "title": "Portfolio",
+      "description": "This site. Type, i18n, motion.",
+      "technologies": ["Next.js", "GSAP", "Tailwind"]
+    },
+    {
+      "href": "#",
+      "title": "Soon",
+      "description": "Next web project — in progress.",
+      "technologies": ["Next.js"]
+    },
+    {
+      "href": "#",
+      "title": "iOS",
+      "description": "A Swift app — in progress.",
+      "technologies": ["Swift", "SwiftUI"]
+    }
+  ]
 }

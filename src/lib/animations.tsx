@@ -22,9 +22,9 @@ export const philosophyTextAnimation = (
   triggerItem: React.RefObject<HTMLElement | null>,
 ) => {
   if (!splitItem.current || !triggerItem.current) return;
-  const splitType = new SplitType(splitItem.current, { types: "chars" });
+  const splitType = new SplitType(splitItem.current, { types: "words" });
 
-  gsap.from(splitType.chars, {
+  gsap.from(splitType.words, {
     scrollTrigger: {
       trigger: triggerItem.current,
       start: "center center",
@@ -185,13 +185,17 @@ export const projectsTitleAnimation = (
       },
       "-=0.8",
     )
-    .from(projectCardRef, {
-      opacity: 0,
-      x: 30,
-      stagger: { amount: 1 },
-      duration: 1.25,
-      ease: "power2.out",
-    });
+    .from(
+      projectCardRef.current?.querySelectorAll("[data-project]") ?? [],
+      {
+        opacity: 0,
+        y: 24,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power2.out",
+      },
+      "-=0.4",
+    );
 
   // Funkcja czyszcząca (bardzo ważna w React!)
   return () => {

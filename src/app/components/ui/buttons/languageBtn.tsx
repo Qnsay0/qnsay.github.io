@@ -20,7 +20,7 @@ export default function LanguageBtn() {
       onClick={() => {
         setIsToggle(!isToggle);
       }}
-      className={`transition-height duration-500 ease-in-out fixed z-20 right-0 bottom-0 w-12 h-12 m-5 rounded-2xl justify-center items-center flex bg-amber-500 cursor-pointer ${isToggle ? "h-25" : "h-10"}`}
+      className={`transition-height duration-500 ease-in-out fixed z-20 right-0 bottom-0 w-12 h-12 m-5 rounded-2xl justify-center items-center flex bg-orange-600/80 cursor-pointer ${isToggle ? "h-25" : "h-10"}`}
     >
       <div
         className={`${isToggle ? "flex" : "hidden"} flex-col justify-start w-[60%] gap-2`}
@@ -29,13 +29,13 @@ export default function LanguageBtn() {
           onClick={() => toggleLanguage("pl")}
           className="cursor-pointer font-bold "
         >
-          <PL />
+          PL
         </button>
         <button
           onClick={() => toggleLanguage("en")}
           className="cursor-pointer font-bold "
         >
-          <US />
+          EN
         </button>
       </div>
 
@@ -43,7 +43,7 @@ export default function LanguageBtn() {
         className={`${isToggle ? "hidden" : "block"} `}
         aria-label="Zmień język"
       >
-        <MdLanguage className="text-xl" />
+        <MdLanguage className="text-xl text-white" />
       </span>
     </div>
   );

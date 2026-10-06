@@ -17,8 +17,6 @@ export default async function Main({
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
-  const allProjects = Object.values(dict.projectCards);
-
   return (
     <main className="select-none overflow-x-hidden">
       <Navbar dict={dict.navbar} />
@@ -35,8 +33,8 @@ export default async function Main({
       <Introduction {...dict.introduction} />
       <Projects
         title={dict.projects.title}
-        subtitle={dict.projects.subtitle}
-        projects={allProjects}
+        description={dict.projects.subtitle}
+        projects={dict.projectCards}
         index={dict.projects.index}
       />
       <Contact {...dict.contact} />

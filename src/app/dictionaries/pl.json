@@ -27,8 +27,28 @@
   "projects": {
     "index": "02",
     "title": "Projekty",
-    "subtitle": "[Projektyw których miałem przyjemność tworzyć i brać czynny udział]"
+    "subtitle": "Rzeczy, które zbudowałem — i te, które właśnie powstają."
   },
+  "projectCards": [
+    {
+      "href": "/",
+      "title": "Portfolio",
+      "description": "Ta strona. Typografia, i18n, motion.",
+      "technologies": ["Next.js", "GSAP", "Tailwind"]
+    },
+    {
+      "href": "#",
+      "title": "Wkrótce",
+      "description": "Kolejny projekt web — w trakcie.",
+      "technologies": ["Next.js"]
+    },
+    {
+      "href": "#",
+      "title": "iOS",
+      "description": "Aplikacja mobilna w Swift — w trakcie.",
+      "technologies": ["Swift", "SwiftUI"]
+    }
+  ],
   "contact": {
     "title": "Kontakt",
     "subtitle": "Masz pytania? Chcesz sie dowiedziec wiecej na moj temat i mojej dzialalnosci? Pisz smialo.",
@@ -44,6 +64,5 @@
   },
   "footer": {
     "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
-  },
-  "projectCards": []
+  }
 }

@@ -3,7 +3,6 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { philosophyTextAnimation } from "@/src/lib/animations";
-import { portfolioData } from "@/src/data/constans";
 
 interface ProjectProps {
   quote: string;
@@ -26,12 +25,12 @@ export default function DesignPhilosophy(props: ProjectProps) {
       <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
         <h1
           ref={textRef}
-          className="text-white uppercase   font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tighter"
+          className="text-white uppercase font-bold text-5xl md:text-7xl leading-[1.05] tracking-tighter"
         >
           "{props.quote}"
         </h1>
 
-        <p className="mt-8 md:mt-12 text-zinc-500 uppercase font-medium text-xl sm:text-2xl md:text-4xl tracking-widest">
+        <p className="mt-8 md:mt-12 text-zinc-500 uppercase font-medium text-3xl  tracking-widest">
           ~ {props.author}
         </p>
       </div>
