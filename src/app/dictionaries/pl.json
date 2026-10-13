@@ -6,11 +6,10 @@
   "home": {
     "topText": "Cześć, jestem",
     "middleTsxt": "Bartłomiej Klimek",
-    "bottomText": "Tutaj coś będzie"
+    "bottomText": "Student 2. roku Politechniki Wrocławskiej, zafascynowany światem nowoczesnych technologii, gotowy do podjęcia się nowych wyzwań!"
   },
-
   "designPhilosophy": {
-    "quote": "Design is not just what it looks like and feels like. Design is how it works.",
+    "quote": "Design to nie tylko to, jak coś wygląda i jakie sprawia wrażenie. Design to sposób, w jaki działa.",
     "author": "Steve Jobs"
   },
   "introduction": {
@@ -27,31 +26,19 @@
   "projects": {
     "index": "02",
     "title": "Projekty",
-    "subtitle": "Rzeczy, które zbudowałem — i te, które właśnie powstają."
+    "subtitle": "Rzeczy, nad którymi miałem przyjemność pracować, i te, nad którymi pracuję teraz"
   },
   "projectCards": [
     {
       "href": "/",
-      "title": "Portfolio",
-      "description": "Ta strona. Typografia, i18n, motion.",
-      "technologies": ["Next.js", "GSAP", "Tailwind"]
-    },
-    {
-      "href": "#",
-      "title": "Wkrótce",
-      "description": "Kolejny projekt web — w trakcie.",
-      "technologies": ["Next.js"]
-    },
-    {
-      "href": "#",
-      "title": "iOS",
-      "description": "Aplikacja mobilna w Swift — w trakcie.",
-      "technologies": ["Swift", "SwiftUI"]
+      "title": "The Voice of PWr",
+      "description": "Forum studenckie, pomagające studentom sprawdzić i wystawić opinię na temat wykładowców Politechniki Wrocławskiej oraz innych tematów związanych z uczelnią",
+      "technologies": ["Next.js", "Tailwind", "Postgres"]
     }
   ],
   "contact": {
     "title": "Kontakt",
-    "subtitle": "Masz pytania? Chcesz sie dowiedziec wiecej na moj temat i mojej dzialalnosci? Pisz smialo.",
+    "subtitle": "Masz pytania? Chcesz się dowiedzieć więcej na mój temat i o mojej działalności? Pisz śmiało.",
     "buttonString": "Wyślij wiadomość",
     "email": "barteklim06@gmail.com",
     "phoneNumber": "+48 571 242 470",
@@ -63,6 +50,6 @@
     "messagePlaceholder": "Napisz krótko, czego potrzebujesz"
   },
   "footer": {
-    "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
+    "footerText": "&copy;2026 Bartłomiej Klimek. Wszelkie prawa zastrzeżone."
   }
 }

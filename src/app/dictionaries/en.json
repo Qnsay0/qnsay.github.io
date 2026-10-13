@@ -6,62 +6,50 @@
   "home": {
     "topText": "Hi, I'm",
     "middleTsxt": "Bartłomiej Klimek",
-    "bottomText": "Something gonna be here!!"
-  },
-  "introduction": {
-    "index": "01",
-    "title": "About Me",
-    "text": "Second-year technical CS student at Wrocław Tech. For two years I've been building web in Next.js and mobile in Swift. Active in faculty government. Outside of code — sport.",
-    "specs": [
-      { "label": "Role", "value": "Frontend · iOS" },
-      { "label": "Stack", "value": "Next.js · Swift" },
-      { "label": "Base", "value": "Wrocław" },
-      { "label": "Off-code", "value": "Government · Sport" }
-    ]
+    "bottomText": "Second-year student at Wrocław University of Science and Technology, fascinated by modern technology and ready to take on new challenges!"
   },
   "designPhilosophy": {
     "quote": "Design is not just what it looks like and feels like. Design is how it works.",
     "author": "Steve Jobs"
   },
+  "introduction": {
+    "index": "01",
+    "title": "About me",
+    "text": "Second-year Technical Computer Science student at Wrocław University of Science and Technology. For two years I've been building for the web in Next.js and for mobile in Swift. I'm active in the faculty student government. Outside of code — sport.",
+    "specs": [
+      { "label": "Role", "value": "Frontend · iOS" },
+      { "label": "Stack", "value": "Next.js · Swift" },
+      { "label": "Base", "value": "Wrocław" },
+      { "label": "Outside code", "value": "Student gov · Sport" }
+    ]
+  },
   "projects": {
     "index": "02",
     "title": "Projects",
-    "subtitle": "Things I've built — and the ones still in progress."
+    "subtitle": "Things I've had the pleasure of working on, and the ones I'm working on now"
   },
+  "projectCards": [
+    {
+      "href": "/",
+      "title": "The Voice of PWr",
+      "description": "A student forum that helps students check and leave reviews of lecturers at Wrocław University of Science and Technology, and discuss other topics related to the university",
+      "technologies": ["Next.js", "Tailwind", "Postgres"]
+    }
+  ],
   "contact": {
     "title": "Contact",
-    "subtitle": "Have a question? Want to know more about me and what I do? Just write.",
-    "buttonString": "Send now",
+    "subtitle": "Got questions? Want to know more about me and what I do? Write anytime.",
+    "buttonString": "Send a message",
     "email": "barteklim06@gmail.com",
     "phoneNumber": "+48 571 242 470",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "emailLabel": "Email",
     "emailPlaceholder": "you@email.com",
-    "messageLabel": "What would you like to ask?",
-    "messagePlaceholder": "Briefly describe what you need"
+    "messageLabel": "What do you want to ask?",
+    "messagePlaceholder": "Write briefly what you need"
   },
   "footer": {
     "footerText": "&copy;2026 Bartłomiej Klimek. All rights reserved."
-  },
-  "projectCards": [
-    {
-      "href": "/",
-      "title": "Portfolio",
-      "description": "This site. Type, i18n, motion.",
-      "technologies": ["Next.js", "GSAP", "Tailwind"]
-    },
-    {
-      "href": "#",
-      "title": "Soon",
-      "description": "Next web project — in progress.",
-      "technologies": ["Next.js"]
-    },
-    {
-      "href": "#",
-      "title": "iOS",
-      "description": "A Swift app — in progress.",
-      "technologies": ["Swift", "SwiftUI"]
-    }
-  ]
+  }
 }

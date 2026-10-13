@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import LanguageBtn from "../components/ui/buttons/languageBtn";
 import { homeTextAnimation } from "@/src/lib/animations";
 import { useRef } from "react";
+import GridBackground from "../components/ui/GridBackground";
 
 interface ProjectProps {
   head: string;
@@ -19,6 +20,7 @@ export default function Home(props: ProjectProps) {
 
   return (
     <div className="relative min-h-dvh px-5 md:px-10">
+      <GridBackground />
       <div className="flex flex-row">
         <div className="min-h-dvh flex items-center">
           <div className="text-white flex flex-col text  gap-5">

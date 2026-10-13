@@ -45,9 +45,18 @@ export default function Projects({
           {description}
         </p>
       </div>
-      <div className="max-w-6xl w-full flex flex-col w-full ml-auto  ">
+      <div className="max-w-6xl w-full flex flex-col w-full ml-auto mt-15">
         <Link rel="stylesheet" href="/">
-          <ProjectCard />
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              index={String(index + 1)}
+              href={project.href}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+            />
+          ))}
         </Link>
       </div>
     </section>

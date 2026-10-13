@@ -10,9 +10,5 @@ export type ProjectItem = {
   href: string;
   title: string;
   description: string;
-  technologies: Tech[];
-};
-
-type Tech = {
-  name: string;
+  technologies: string[];
 };

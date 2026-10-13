@@ -14,7 +14,8 @@ export default function Navbar({ dict }: ProjectProps) {
       <div className=" tracking-[-0.02em]">
         <h1 className="text-white">{dict.navigationTitle}</h1>
       </div>
-      <DownloadBtn btnText={dict.downloadBtn} />
+      {/*Przycisk do portfolio*/}
+      {/* <DownloadBtn btnText={dict.downloadBtn} /> */}
     </header>
   );
 }
