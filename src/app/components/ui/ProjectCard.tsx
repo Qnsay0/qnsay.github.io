@@ -3,11 +3,10 @@ import { ProjectItem } from "@/src/data/types/projects";
 import { Badge } from "@/components/ui/badge";
 export default function ProjectCard({
   index,
-  href,
   title,
   description,
   technologies,
-}: ProjectItem) {
+}: ProjectItem & { index: string }) {
   return (
     <div className="group w-full max-w-7xl border-t border-b border-black/20 p-5 transition duration-200 hover:-translate-y-0.5 hover:bg-black/5">
       <div className="flex w-full flex-row items-center space-x-12">

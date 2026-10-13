@@ -6,7 +6,6 @@ export interface ProjectProps {
 }
 
 export type ProjectItem = {
-  index: string;
   href: string;
   title: string;
   description: string;
