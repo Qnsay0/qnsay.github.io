@@ -1,0 +1,55 @@
+{
+  "navbar": {
+    "navigationTitle": "Frontend Developer",
+    "downloadBtn": "Pobierz CV"
+  },
+  "home": {
+    "topText": "Cześć, jestem",
+    "middleTsxt": "Bartłomiej Klimek",
+    "bottomText": "Student 2. roku Politechniki Wrocławskiej, zafascynowany światem nowoczesnych technologii, gotowy do podjęcia się nowych wyzwań!"
+  },
+  "designPhilosophy": {
+    "quote": "Design to nie tylko to, jak coś wygląda i jakie sprawia wrażenie. Design to sposób, w jaki działa.",
+    "author": "Steve Jobs"
+  },
+  "introduction": {
+    "index": "01",
+    "title": "O mnie",
+    "text": "Student 2. roku informatyki technicznej na PWr. Od dwóch lat buduję web w Next.js i mobile w Swift. Działam w samorządzie wydziałowym. Poza kodem — sport.",
+    "specs": [
+      { "label": "Rola", "value": "Frontend · iOS" },
+      { "label": "Stack", "value": "Next.js · Swift" },
+      { "label": "Baza", "value": "Wrocław" },
+      { "label": "Poza kodem", "value": "Samorząd · Sport" }
+    ]
+  },
+  "projects": {
+    "index": "02",
+    "title": "Projekty",
+    "subtitle": "Rzeczy, nad którymi miałem przyjemność pracować, i te, nad którymi pracuję teraz"
+  },
+  "projectCards": [
+    {
+      "href": "/",
+      "title": "The Voice of PWr",
+      "description": "Forum studenckie, pomagające studentom sprawdzić i wystawić opinię na temat wykładowców Politechniki Wrocławskiej oraz innych tematów związanych z uczelnią",
+      "technologies": ["Next.js", "Tailwind", "Postgres"]
+    }
+  ],
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Masz pytania? Chcesz się dowiedzieć więcej na mój temat i o mojej działalności? Pisz śmiało.",
+    "buttonString": "Wyślij wiadomość",
+    "email": "barteklim06@gmail.com",
+    "phoneNumber": "+48 571 242 470",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Twoje imię",
+    "emailLabel": "Email",
+    "emailPlaceholder": "twoj@email.com",
+    "messageLabel": "O co chcesz się zapytać?",
+    "messagePlaceholder": "Napisz krótko, czego potrzebujesz"
+  },
+  "footer": {
+    "footerText": "&copy;2026 Bartłomiej Klimek. Wszelkie prawa zastrzeżone."
+  }
+}
