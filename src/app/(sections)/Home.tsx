@@ -23,7 +23,7 @@ export default function Home(props: ProjectProps) {
       <GridBackground />
       <div className="flex flex-row">
         <div className="min-h-dvh flex items-center">
-          <div className="text-white flex flex-col text  gap-5">
+          <div className=" text-center text-white flex flex-col text  gap-5">
             <div className="flex flex-col" ref={textRef}>
               <p className="text-xl sm:text-2xl md:text-3xl font-medium mb-2">
                 {props.head}
@@ -32,14 +32,13 @@ export default function Home(props: ProjectProps) {
                 {props.middle}
               </span>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed text-neutral-300 dark:text-gray-300 mt-6 max-w-4xl">
+              <p className="m-auto sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed text-neutral-300 dark:text-gray-300 mt-6 max-w-4xl">
                 {props.bottom}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <LanguageBtn />
     </div>
   );
 }

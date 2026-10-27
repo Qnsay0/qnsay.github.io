@@ -30,7 +30,8 @@
   },
   "projectCards": [
     {
-      "href": "/",
+      "href": "https://github.com/robuspospolitus/the-voice-of-pwr.git",
+      "image": "/image.png",
       "title": "The Voice of PWr",
       "description": "A student forum that helps students check and leave reviews of lecturers at Wrocław University of Science and Technology, and discuss other topics related to the university",
       "technologies": ["Next.js", "Tailwind", "Postgres"]

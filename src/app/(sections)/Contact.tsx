@@ -1,5 +1,5 @@
 "use client";
-import { FaGithubAlt, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { MdSend } from "react-icons/md";
@@ -18,24 +18,6 @@ interface ContactProps {
   messageLabel: string;
   messagePlaceholder: string;
 }
-
-const SOCIALS: { href?: string; icon: IconType; label: string }[] = [
-  {
-    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
-    icon: FaGithubAlt,
-    label: "GitHub",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
-    icon: FaLinkedin,
-    label: "LinkedIn",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_GITHUB_LINK,
-    icon: FaInstagram,
-    label: "Instagram",
-  },
-];
 
 const labelClass =
   "text-sm font-semibold uppercase tracking-wider text-neutral-400";
@@ -120,21 +102,6 @@ export default function Contact({
             <span className={`${contactLineClass} text-white`}>{email}</span>
             <span className={contactLineClass}>{phoneNumber}</span>
           </div>
-        </div>
-
-        <div className="flex gap-5 text-2xl">
-          {SOCIALS.map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="text-neutral-400 transition-colors hover:text-white"
-            >
-              <Icon />
-            </a>
-          ))}
         </div>
       </div>
 
