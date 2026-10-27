@@ -30,7 +30,8 @@
   },
   "projectCards": [
     {
-      "href": "/",
+      "href": "https://github.com/robuspospolitus/the-voice-of-pwr.git",
+      "image": "/image.png",
       "title": "The Voice of PWr",
       "description": "Forum studenckie, pomagające studentom sprawdzić i wystawić opinię na temat wykładowców Politechniki Wrocławskiej oraz innych tematów związanych z uczelnią",
       "technologies": ["Next.js", "Tailwind", "Postgres"]

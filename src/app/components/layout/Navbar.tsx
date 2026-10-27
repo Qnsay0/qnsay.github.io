@@ -1,6 +1,7 @@
 // Navbar.tsx
-import DownloadBtn from "../ui/buttons/DownloadBtn";
-
+"use client";
+import { FaGithubAlt } from "react-icons/fa";
+import LanguageBtn from "../ui/buttons/languageBtn";
 interface ProjectProps {
   dict: {
     navigationTitle: string;
@@ -14,6 +15,15 @@ export default function Navbar({ dict }: ProjectProps) {
       <div className=" tracking-[-0.02em]">
         <h1 className="text-white">{dict.navigationTitle}</h1>
       </div>
+      <div className="flex flex-row space-x-4 justify-center items-center">
+        <a target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_LINK}>
+          <span className="text-white text-xl cursor-pointer ">
+            <FaGithubAlt />
+          </span>
+        </a>
+        <LanguageBtn />
+      </div>
+
       {/*Przycisk do portfolio*/}
       {/* <DownloadBtn btnText={dict.downloadBtn} /> */}
     </header>

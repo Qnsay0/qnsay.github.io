@@ -7,6 +7,7 @@ export interface ProjectProps {
 
 export type ProjectItem = {
   href: string;
+  image: string;
   title: string;
   description: string;
   technologies: string[];

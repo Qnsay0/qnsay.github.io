@@ -1,50 +1,74 @@
-import { useState } from "react";
-import { MdLanguage } from "react-icons/md"; // Zakładam ten import
+"use client";
 
-import { PL, US } from "country-flag-icons/react/3x2";
+import { usePathname, useRouter } from "next/navigation";
+
+const LOCALES = [
+  { code: "pl", label: "Polski" },
+  { code: "en", label: "English" },
+] as const;
+
+type Locale = (typeof LOCALES)[number]["code"];
+
 export default function LanguageBtn() {
-  const [isToggle, setIsToggle] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const current: Locale = pathname.split("/")[1] === "en" ? "en" : "pl";
+  const index = current === "en" ? 1 : 0;
 
-  const toggleLanguage = (lang: string) => {
-    setIsToggle(!isToggle);
+  const go = (lang: Locale) => {
+    if (lang === current) return;
 
-    const pathParts = window.location.pathname.split("/");
-    pathParts[1] = lang;
-
-    const newPathName = pathParts.join("/");
-    window.location.href = newPathName;
+    const parts = pathname.split("/");
+    parts[1] = lang;
+    router.push(parts.join("/"));
   };
 
   return (
     <div
-      onClick={() => {
-        setIsToggle(!isToggle);
-      }}
-      className={`transition-height duration-500 ease-in-out fixed z-20 right-0 bottom-0 w-12 h-12 m-5 rounded-2xl justify-center items-center flex bg-orange-600/80 cursor-pointer ${isToggle ? "h-25" : "h-10"}`}
+      role="group"
+      aria-label="Language"
+      className="relative h-8 w-[4.75rem] rounded-full border border-white/15 bg-white/[0.04] p-0.5"
     >
-      <div
-        className={`${isToggle ? "flex" : "hidden"} flex-col justify-start w-[60%] gap-2`}
-      >
-        <button
-          onClick={() => toggleLanguage("pl")}
-          className="cursor-pointer font-bold "
+      <div className="relative grid h-full grid-cols-2">
+        <span
+          aria-hidden
+          className="absolute inset-y-0 left-0 w-1/2 overflow-hidden rounded-full bg-white"
+          style={{ transform: `translateX(${index * 100}%)` }}
         >
-          PL
-        </button>
-        <button
-          onClick={() => toggleLanguage("en")}
-          className="cursor-pointer font-bold "
-        >
-          EN
-        </button>
-      </div>
+          <span
+            className="flex h-[200%] w-full flex-col"
+            style={{ transform: `translateY(-${index * 50}%)` }}
+          >
+            {LOCALES.map((locale) => (
+              <span
+                key={locale.code}
+                className="flex h-1/2 items-center justify-center text-[10px] font-semibold tracking-[0.2em] text-black"
+              >
+                {locale.code.toUpperCase()}
+              </span>
+            ))}
+          </span>
+        </span>
 
-      <span
-        className={`${isToggle ? "hidden" : "block"} `}
-        aria-label="Zmień język"
-      >
-        <MdLanguage className="text-xl text-white" />
-      </span>
+        {LOCALES.map((locale) => {
+          const active = locale.code === current;
+
+          return (
+            <button
+              key={locale.code}
+              type="button"
+              onClick={() => go(locale.code)}
+              aria-pressed={active}
+              aria-label={locale.label}
+              className={`relative z-10 cursor-pointer text-[10px] font-semibold tracking-[0.2em] uppercase transition-colors duration-300 ${
+                active ? "text-transparent" : "text-white/40 hover:text-white"
+              }`}
+            >
+              {locale.code}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

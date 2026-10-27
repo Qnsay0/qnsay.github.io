@@ -1,9 +1,6 @@
 "use client";
 import ProjectCard from "@/src/app/components/ui/ProjectCard";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { projectsTitleAnimation } from "@/src/lib/animations";
-import Link from "next/link";
 import { ProjectProps } from "@/src/data/types/projects";
 
 export default function Projects({
@@ -45,19 +42,14 @@ export default function Projects({
           {description}
         </p>
       </div>
-      <div className="max-w-6xl w-full flex flex-col w-full ml-auto mt-15">
-        <Link rel="stylesheet" href="/">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              index={String(index + 1)}
-              href={project.href}
-              title={project.title}
-              description={project.description}
-              technologies={project.technologies}
-            />
-          ))}
-        </Link>
+      <div className="mt-16 ml-auto flex w-full max-w-6xl flex-col">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.title}
+            index={String(index + 1)}
+            {...project}
+          />
+        ))}
       </div>
     </section>
   );

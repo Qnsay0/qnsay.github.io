@@ -25,7 +25,7 @@ export default function DesignPhilosophy(props: ProjectProps) {
       <div className="max-w-7xl mx-auto text-center flex flex-col items-center">
         <h1
           ref={textRef}
-          className="text-white uppercase font-bold text-5xl md:text-7xl leading-[1.05] tracking-tighter"
+          className="text-white uppercase font-bold text-4xl md:text-6xl leading-[1.05] tracking-tighter"
         >
           "{props.quote}"
         </h1>
