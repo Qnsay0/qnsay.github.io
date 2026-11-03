@@ -9,6 +9,12 @@ import Home from "@/src/app/(sections)/Home";
 import Contact from "@/src/app/(sections)/Contact";
 import Footer from "@/src/app/components/layout/Footer";
 
+const locales = ["pl", "en"] as const;
+
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
 export default async function Main({ params }: { params: Promise<{ lang: "pl" | "en" }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
