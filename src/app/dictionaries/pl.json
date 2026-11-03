@@ -31,9 +31,16 @@
   "projectCards": [
     {
       "href": "https://github.com/robuspospolitus/the-voice-of-pwr.git",
-      "image": "/image.png",
+      "image": "/projects/the-voice-of-pwr.png",
       "title": "The Voice of PWr",
       "description": "Forum studenckie, pomagające studentom sprawdzić i wystawić opinię na temat wykładowców Politechniki Wrocławskiej oraz innych tematów związanych z uczelnią",
+      "technologies": ["Next.js", "Tailwind", "Postgres"]
+    },
+    {
+      "href": "https://github.com/Qnsay0/mnozenie-binarne.git",
+      "image": "/projects/mnozenie-binarne.png",
+      "title": "Kalkulator binarny",
+      "description": "nteraktywny wizualizator mnożenia binarnego w NB (naturalnym binarnym) i U2 (uzupełnieniu do dwóch). Pokazuje iloczyny częściowe, przekodowanie mnożnika i sumowanie, z wyjaśnieniem każdego kroku. (Dodawanie funkcionalności)",
       "technologies": ["Next.js", "Tailwind", "Postgres"]
     }
   ],
