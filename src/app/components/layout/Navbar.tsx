@@ -1,7 +1,9 @@
 // Navbar.tsx
 "use client";
-import { FaGithubAlt } from "react-icons/fa";
+import { FaGithubAlt, FaLinkedin } from "react-icons/fa";
 import LanguageBtn from "../ui/buttons/languageBtn";
+import { useEffect, useState } from "react";
+
 interface ProjectProps {
   dict: {
     navigationTitle: string;
@@ -10,22 +12,34 @@ interface ProjectProps {
 }
 
 export default function Navbar({ dict }: ProjectProps) {
-  return (
-    <header className="relative z-1 flex px-[2em] py-[1.5em] w-full z-0 bg-black justify-between">
-      <div className=" tracking-[-0.02em]">
-        <h1 className="text-white">{dict.navigationTitle}</h1>
-      </div>
-      <div className="flex flex-row space-x-4 justify-center items-center">
-        <a target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_LINK}>
-          <span className="text-white text-xl cursor-pointer ">
-            <FaGithubAlt />
-          </span>
-        </a>
-        <LanguageBtn />
-      </div>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-      {/*Przycisk do portfolio*/}
-      {/* <DownloadBtn btnText={dict.downloadBtn} /> */}
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 max-w-7xl m-auto">
+      <nav className={`mx-auto flex w-full flex-row items-center justify-between  transition-[max-width,margin,padding,border-radius] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isScrolled ? "mt-4 max-w-3xl rounded-full px-5 py-2.5 bg-black/40 backdrop-blur-sm" : "mt-0 max-w-full px-6 py-4"}`}>
+        <div className=" tracking-tighter">
+          <h1 className="text-white font-semibold">{dict.navigationTitle}</h1>
+        </div>
+        <div className="flex flex-row space-x-4 justify-center items-center">
+          <div className="flex justify-center items-center rounded-full gap-4">
+            <a target="_blank" href="https://github.com/Qnsay0" className="text-muted">
+              <FaGithubAlt size={18} />
+            </a>
+            <a target="_blank" href="https://github.com/Qnsay0" className="text-muted">
+              <FaLinkedin size={18} />
+            </a>
+          </div>
+
+          <LanguageBtn />
+        </div>
+      </nav>
     </header>
   );
 }
